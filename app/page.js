@@ -1,7 +1,17 @@
+import CategoriesSection from "./components/home/CategoriesSection";
+import CtaSection from "./components/home/CtaSection";
+import FeaturedEvents from "./components/home/FeaturedEvents";
+import HeroSection from "./components/home/HeroSection";
+import Footer from "./components/Footer";
+
 export default function Home() {
   return (
     <div>
-      <h1>Home</h1>
+      <HeroSection />
+      <CategoriesSection />
+      <FeaturedEvents />
+      <CtaSection />
+      <Footer />
     </div>
   );
 }
