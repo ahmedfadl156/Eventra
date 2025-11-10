@@ -1,9 +1,10 @@
 import { BadgeCheck, Calendar, MapPin, Ticket } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function EventCard({event}) {
 return (
-    <div className="bg-white rounded-xl relative shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+    <Link href={`/event/${event.id}`} className="bg-white rounded-xl relative shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 group">
         {/* Image Container */}
         <div className="image relative w-full h-64 overflow-hidden">
             <Image 
@@ -24,7 +25,7 @@ return (
                     Verified Organizer
                 </p>
             </div>
-            <h2 className="text-lg font-semibold mt-4">{event.title}</h2>
+            <h2 className="text-lg font-semibold mt-4 group-hover:text-purple-600 transition-colors duration-200">{event.title}</h2>
             <div className="date mt-4">
                 <p className="flex items-center gap-2 text-gray-600">
                     <Calendar className="size-4"/>
@@ -46,6 +47,6 @@ return (
                 </span>
             </div>
         </div>
-    </div>
+    </Link>
 )
 }
