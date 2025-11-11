@@ -1,3 +1,4 @@
+'use client'
 import { BadgeCheck, Calendar, MapPin, Ticket } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,7 +9,7 @@ return (
         {/* Image Container */}
         <div className="image relative w-full h-64 overflow-hidden">
             <Image 
-                src={event.image} 
+                src={event.image_url} 
                 alt="Event image" 
                 quality={75} 
                 fill
@@ -19,7 +20,7 @@ return (
         {/* Content Section */}
         <div className="content p-4">
             <div className="category flex items-center gap-4">
-                <span className="bg-purple-100 text-purple-600 px-3 py-1 text-sm rounded-full font-medium">{event.category}</span>
+                <span className="bg-purple-100 text-purple-600 px-3 py-1 text-sm rounded-full font-medium">{event.categories?.name}</span>
                 <p className="flex items-center gap-1 text-[12px] text-gray-600">
                     <BadgeCheck className="size-4 text-purple-500"/>
                     Verified Organizer
@@ -34,7 +35,7 @@ return (
             </div>
             <p className="text-gray-600 flex items-center gap-2 mt-2 mb-8">
                 <MapPin className="size-4"/>
-                <span>{event.location}</span>
+                <span>{event.city}</span>
             </p>
             <div className="price flex items-center justify-between pt-4 border-t border-gray-200">
                 <p className="flex items-center gap-2">

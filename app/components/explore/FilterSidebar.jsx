@@ -2,13 +2,14 @@
 import { ListFilter, MapPin, Tag, DollarSign } from "lucide-react";
 import SearchForm from "./SearchForm";
 
-export default function FilterSidebar({filters , setFilters}) {
+export default function FilterSidebar({filters , setFilters, search, setSearch}) {
     function clearFilters(){
         setFilters({
             city: 'all',
             category: 'all',
             type: 'all',
         })
+        setSearch('');
     }
     
     return (
@@ -21,7 +22,7 @@ export default function FilterSidebar({filters , setFilters}) {
                 </div>
 
                 {/* Search */}
-                <SearchForm />
+                <SearchForm search={search} setSearch={setSearch}/>
 
                 {/* City Filter */}
                 <div className="space-y-3">
@@ -58,14 +59,14 @@ export default function FilterSidebar({filters , setFilters}) {
                         onChange={(e) => setFilters({ ...filters, category: e.target.value })}
                     >
                         <option value="all">All Categories</option>
-                        <option value="music">🎵 Music & Concerts</option>
-                        <option value="sports">⚽ Sports & Fitness</option>
-                        <option value="art">🎨 Arts & Culture</option>
-                        <option value="tech">💻 Tech & Business</option>
-                        <option value="food">🍽️ Food & Drink</option>
-                        <option value="workshops">🛠️ Workshops</option>
-                        <option value="networking">🤝 Networking</option>
-                        <option value="festivals">🎉 Festivals</option>
+                        <option value="Music">🎵 Music & Concerts</option>
+                        <option value="Sports">⚽ Sports & Fitness</option>
+                        <option value="Art">🎨 Arts & Culture</option>
+                        <option value="Tech">💻 Tech & Business</option>
+                        <option value="Food">🍽️ Food & Drink</option>
+                        <option value="Workshops">🛠️ Workshops</option>
+                        <option value="Networking">🤝 Networking</option>
+                        <option value="Festivals">🎉 Festivals</option>
                     </select>
                 </div>
 

@@ -4,6 +4,16 @@ const nextConfig = {
   reactCompiler: true,
   images: {
     qualities: [25 , 50 , 75],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'source.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
   },
 };
 
