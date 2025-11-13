@@ -4,6 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function EventCard({event}) {
+    const date = new Date(event?.date);
+    function formatTime(time){
+        const [hours, minutes] = time.split(':');
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        return `${hours % 12 || 12}:${minutes} ${ampm}`;
+    }
 return (
     <Link href={`/event/${event.id}`} className="bg-white rounded-xl relative shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 group">
         {/* Image Container */}
@@ -30,7 +36,7 @@ return (
             <div className="date mt-4">
                 <p className="flex items-center gap-2 text-gray-600">
                     <Calendar className="size-4"/>
-                    <span>{event.date} . {event.time}</span>
+                    <span>{date.toLocaleDateString()} . {formatTime(event.time)}</span>
                 </p>
             </div>
             <p className="text-gray-600 flex items-center gap-2 mt-2 mb-8">

@@ -72,10 +72,10 @@ export default function Navigation() {
                   Login
                 </Link>
                 <Link
-                  href="/register"
+                  href="/signup"
                   className="font-semibold bg-gradient-to-r from-[#7C5CFF] to-[#23C3FF] text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity"
                 >
-                  Register
+                  Sign Up
                 </Link>
               </>
             )}
@@ -162,11 +162,11 @@ export default function Navigation() {
                     Login
                   </Link>
                   <Link
-                    href="/register"
+                    href="/signup"
                     onClick={closeMobileMenu}
                     className="w-full text-center font-semibold bg-gradient-to-r from-[#7C5CFF] to-[#23C3FF] text-white px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
                   >
-                    Register
+                    Sign Up
                   </Link>
                 </>
               )}

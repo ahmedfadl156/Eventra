@@ -28,3 +28,11 @@ export async function getEventById(id){
     }
     return data;
 }
+
+export async function getEventTickets(id){
+    const {data , error} = await supabase.from('tickets').select('*').eq('event_id', id);
+    if(error){
+        throw new Error(error.message);
+    }
+    return data;
+}
